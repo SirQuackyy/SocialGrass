@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="signup">
+    <div class="main">
+        <h1 class="logtitle"> Sign Up</h1>
+        <label for="fname">First Name</label><br>
+        <input type="text" id = "fname" name = "fname">
+        <br>
+
+        <label for="lname">Last Name</label><br>
+        <input type="text" id = "lname" name = "lname">
+        <br>
+        <script>
+            const schoolNames = [];
+        </script>
+        <div class="autocomplete" style="width:40%;">
+            <label for="school">School Name</label><br>
+            <input type="text" id = "school" name = "school" oninput = "checkcomplete()">
+        </div>
+        <br><label for="username">Username</label><br>
+        <input type="text" id = "username" name = "username">
+        <br>
+        <label for="pass" >Password</label>
+        </div>
+        <p class="pword" ><small>*Must Contain <b syle = "color: black" id = "tex">at least 8 Characters </b> and <b syle = "color:black" id = "tex1"> 1 Number </b></small></p>
+        <div class="main2">
+        <input type="text" id = "pass" name = "pass" oninput="checkpass()">
+        <br>
+    
+        <label for="cpass" >Confirm Password</label>
+        <br>
+        <input type="text" id = "cpass" name = "cpass" oninput = "checkconf()">
+
+        <p><small id = "confirm" style = "color:red"></small></p>
+        <button onclick= "signsubmit()">Submit</button>
+        <script src="signup.js"></script>
+    </div>
+    </div>
+    <div class="login">
+        <h1 class="logtitle"> Login</h1>
+
+    </div>
+
+</body>
+</html>
