@@ -37,21 +37,90 @@ function checkval(x){
   return document.getElementById(x).value.length > 0
 }
 
+function loginsubmit(){
+  // $.ajax({
+  //   type: 'GET',
+  //   url: `http://localhost:3000/login/${document.getElementById("usern").value}/${document.getElementById("passw").value}`,
+  //   success: function(response){
+  //     console.log(response);
+  //     document.cookie = `username=${document.getElementById("usern").value}`;
+  //     location.href = "./home.html"
+  //   },
+  //   error: function(xhr, status, err) {
+  //     console.log(xhr.responseText);
+  //   }
+  // });
+  fetch("./db.json")
+  .then(response => {
+   return response.json();
+  })
+  .then(db => {
+    let found = false;
+    for(var i = 0; i < db.length; i++){
+      if(document.getElementById("usern").value == db[i].username){
+        if(document.getElementById("passw").value == db[i].password){
+          found = true;
+          break;      
+        }
+      }
+    }
+    if(found){
+        document.cookie = `username=${document.getElementById("usern").value}`;
+        location.href = "./home.html"
+    }
+  });
+}
+
 function signsubmit(){
   if (char && conf && num){
     if (checkval("fname") && checkval("lname") && checkval("username") && checkval("school")){
-      console.log(`${document.getElementById("pass").value}`)
-      var friends = ["you", "have", "no", "friends"];
-      $.ajax({
-        type: 'POST',
-        url: `http://localhost:3000/add_user/${document.getElementById("username").value}/${document.getElementById("pass").value}/${document.getElementById("fname").value}/${document.getElementById("lname").value}/${document.getElementById("school").value}/"I am I"/${friends}`,
-        success: function(response) { 
-         console.log(response);
-        },
-        error: function(xhr, status, err) {
-          console.log(xhr.responseText);
+      fetch("./db.json")
+      .then(response => {
+        return response.json();
+      })
+      .then(db => {
+      let found = false;
+      for(var i = 0; i < db.length; i++){
+        if(document.getElementById("username").value == db[i].username){
+          found = true;
+          break;
         }
-      });
+      }
+      if(!found){
+        $.ajax({
+          type: 'POST',
+          url: `http://localhost:3000/add_user`,
+          data:{
+            "username": document.getElementById("username").value,
+            "password": document.getElementById("pass").value,
+            "first_name": document.getElementById("fname").value,
+            "last_name": document.getElementById("lname").value,
+            "school": document.getElementById("school").value,
+            "aboutme": "",
+            "friends": [],
+            "interests": []
+          },
+          success: function(response) { 
+            console.log(response);
+            document.cookie = `username=${document.getElementById("username").value}`;
+            location.href = "./home.html"
+          },
+          error: function(xhr, status, err) {
+            console.log(xhr.responseText);
+          }
+        });
+      }
+    });
+      // $.ajax({
+      //   type: 'GET',
+      //   url: `http://localhost:3000/user/${document.getElementById("username").value}`,
+      //   success: function(response){
+      //     if(response == 'exists'){
+      //       console.log("no");
+      //     } else {
+      //     }
+      //   }
+      // })
     }
   }
 }
