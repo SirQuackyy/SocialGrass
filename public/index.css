@@ -1,17 +1,40 @@
 .title{
     font-size: 500%;
-    color:  #323331;
-    
+    /* color:  #323331; */
+    color:#009999;
+}
+.realtagline{
+  color:#009999;
 }
 .blue{
-  padding: 20%;
+  padding: 15%;
   padding-left: 35%;
   padding-right:35%;
-  padding-bottom:60%;
+  padding-bottom:20%;
   background-image: linear-gradient(#4ca1af, #c4e0e5);
   position: fixed;
 }
 .tags{
     font-size: 125%; 
-    color: #444a3f;
+    /* color: #444a3f; */
+}
+a:link{
+  color:currentColor;
+}
+a:visited{
+  color:CurrentColor;
+}
+button{
+  align:center;
+}
+.modal-body{
+  background-color:#F1F1F1;
+}
+.main2{
+  background-color:#F1F1F1;
+  font-size: 15%;
+  text-align: center;
+}
+.modal-footer{
+position: center;
 }

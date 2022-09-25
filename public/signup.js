@@ -41,9 +41,10 @@ function signsubmit(){
   if (char && conf && num){
     if (checkval("fname") && checkval("lname") && checkval("username") && checkval("school")){
       console.log(`${document.getElementById("pass").value}`)
+      var friends = ["you", "have", "no", "friends"];
       $.ajax({
         type: 'POST',
-        url: `http://localhost:3000/users/${document.getElementById("username").value}&=${document.getElementById("pass").value}&=${document.getElementById("fname").value}&=${document.getElementById("lname").value}&=${document.getElementById("school").value}&=""&=${[]}`,
+        url: `http://localhost:3000/add_user/${document.getElementById("username").value}/${document.getElementById("pass").value}/${document.getElementById("fname").value}/${document.getElementById("lname").value}/${document.getElementById("school").value}/"I am I"/${friends}`,
         success: function(response) { 
          console.log(response);
         },

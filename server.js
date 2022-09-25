@@ -17,10 +17,12 @@ const app = express();
 // console.debug('Server listening on port ' + port);
 
 const server = require('server');
-const { get, socket } = server.router;
-const { render } = server.reply;
+const { get, socket, post } = server.router;
+const { render, send, status } = server.reply;
 const fs = require('fs');
-const dbPath = './db.json';
+const dbPath = './public/db.json';
+const fetch = (...args) =>
+  import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 // Update everyone with the current user count
 const updateCounter = ctx => {
@@ -32,26 +34,44 @@ const sendMessage = ctx => {
   ctx.io.emit('message', ctx.data);
 };
 
-server([
+server({ security: { csrf: false } }, [
   get('/', ctx => render('globalChat.html')),
   socket('connect', updateCounter),
   socket('disconnect', updateCounter),
-  socket('message', sendMessage)
-]);
-
-app.get('/add_user/:username&=:password&=:first&=:last&=:school&=:about&=:friends', function(req, res) {
-  fetch('./data.json')
+  socket('message', sendMessage),
+  post('/add_user/:username/:password/:first/:last/:school/:about/:friends', ctx => {
+    status(200).send('ok');
+    fetch('http://localhost:3000/public/db.json')
     .then((response) => response.json())
     .then((json) => {
-      json["table"].push({
-        "username": req.params.username,
-        "password": req.params.password,
-        "first_name": req.params.first,
-        "last_name": req.params.last,
-        "school": req.params.school,
-        "aboutme": req.params.about,
-        "friends": req.params.friends
+      json.push({
+        "username": ctx.params.username,
+        "password": ctx.params.password,
+        "first_name": ctx.params.first,
+        "last_name": ctx.params.last,
+        "school": ctx.params.school,
+        "aboutme": ctx.params.about,
+        "friends": ctx.params.friends
       });
-      fs.writeFile('./db.json', JSON.stringify(json), 'utf8', callback);
+      fs.writeFile(dbPath, JSON.stringify(json), 'utf8', callback);
     });
-});
+  })
+]);
+
+// app.get('/add_user/:username&=:password&=:first&=:last&=:school&=:about&=:friends', function(req, res) {
+//   fetch('./data.json')
+//     .then((response) => response.json())
+//     .then((json) => {
+//       json["table"].push({
+//         "username": req.params.username,
+//         "password": req.params.password,
+//         "first_name": req.params.first,
+//         "last_name": req.params.last,
+//         "school": req.params.school,
+//         "aboutme": req.params.about,
+//         "friends": req.params.friends
+//       });
+//       fs.writeFile('./db.json', JSON.stringify(json), 'utf8', callback);
+//     });
+//     res.send(200, { message: 'ok' });
+// });

@@ -1,20 +1,32 @@
 #home{
     text-align: center;
-    padding: 20%;
+    padding-bottom: 20%;
+    width: 100%;
     font-size: 250%;
-     
+    position: fixed; 
+    background-color: #b8cdc9; opacity: 0.3;
+    vertical-align: middle;
+
 }
+.spacer{
+    padding:9.5%
+}
+
 body{
-    background-color: #59776f;
+    background-image: url("https://i.pinimg.com/564x/19/51/27/19512786b4dfb366834a9edb9e70bdfc.jpg");
+    background-repeat: no-repeat;
+    background-size: 200%;
 }
+
 .Welcome{
     background:-webkit-linear-gradient(45deg, #323331, #35413f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 5px;
+
 }
 .Username{
-    color: #323331;
+    /* color: #323331; */
     font-size: 100%;
     margin-top: 5px;
     margin-bottom: 10px;

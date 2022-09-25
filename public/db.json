@@ -1,3 +1,11 @@
 {
-"table": []
+    "table": {
+        "username": "username",
+        "password": "password",
+        "first_name": "first",
+        "last_name": "last",
+        "school": "school",
+        "aboutme": "about",
+        "friends": "friends"
+    }
 }
