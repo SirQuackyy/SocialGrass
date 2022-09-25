@@ -1,4 +1,6 @@
-import mongoose from 'mongoose';
+const fs = require('fs')
+const db = 
+
 function checkpass(){
     var reg = /\d/m
     var pass = document.getElementById("pass").value
