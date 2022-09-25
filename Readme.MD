@@ -1,4 +1,5 @@
 # Welcome to Frinder!
+> Never be lonely again!
 ### Inspiration:
 We were inspired by the loneliness one of our team mates had felt before having met the rest of us, which led us to come up with the idea of Frinder where only teenagers could access it and could interact with each other freely from across the country. We wanted to make sure nobody was lonely and that everyone had friends, so we drew inspiration from Tinder due to us having seen some memes regarding Tinder, we decided to name it after Tinder, but instead of finding love we find you friends.
 
