@@ -44,6 +44,24 @@ server({ security: { csrf: false } }, [
     fs.writeFileSync('./public/db.json', JSON.stringify(db), 'utf8');
     render('home.html');
   }),
+  post('/set_interests/:user', ctx => {
+    for(var i = 0; i < db.length; i++){
+      if(db[i].username = ctx.params.user){
+        db[i].interests = ctx.data;
+        break;
+      }
+    }
+    fs.writeFileSync('./public/db.json', JSON.stringify(db), 'utf8');
+  }),
+  post('/set_about/:user', ctx => {
+    for(var i = 0; i < db.length; i++){
+      if(db[i].username = ctx.params.user){
+        db[i].aboutme = ctx.data;
+        break;
+      }
+    }
+    fs.writeFileSync('./public/db.json', JSON.stringify(db), 'utf8');
+  }),
   get('/user/:username', ctx => {
     let found = false;
     for(var i = 0; i < db.length; i++){

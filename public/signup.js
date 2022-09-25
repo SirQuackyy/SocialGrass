@@ -60,7 +60,7 @@ function loginsubmit(){
       if(document.getElementById("usern").value == db[i].username){
         if(document.getElementById("passw").value == db[i].password){
           found = true;
-          break;      
+          break;
         }
       }
     }
@@ -97,13 +97,13 @@ function signsubmit(){
             "last_name": document.getElementById("lname").value,
             "school": document.getElementById("school").value,
             "aboutme": "",
-            "friends": [],
-            "interests": []
+            "friends": ["none"],
+            "interests": ["none"]
           },
           success: function(response) { 
             console.log(response);
             document.cookie = `username=${document.getElementById("username").value}`;
-            location.href = "./home.html"
+            location.href = "./interests.html"
           },
           error: function(xhr, status, err) {
             console.log(xhr.responseText);

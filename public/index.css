@@ -13,10 +13,10 @@ img{
   color: #959683;
 }
 .blue{
-  background-image: linear-gradient(#e1ddd4, #d0c9bb);
+  background-image: linear-gradient(45deg, #e1ddd4, #d0c9bb);
   position: fixed;
   padding: 5%;
-  padding-top: 3%;
+  padding-top: 1%;
 }
 .tags{
     font-size: 125%; 
