@@ -1,0 +1,26 @@
+#home{
+    text-align: center;
+    padding: 20%;
+    font-size: 250%;
+     
+}
+body{
+    background-color: #59776f;
+}
+.Welcome{
+    background:-webkit-linear-gradient(45deg, #323331, #35413f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+}
+.Username{
+    color: #323331;
+    font-size: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+button{
+    background-color: #cdc5b86e;
+    color: #323331
+    
+}

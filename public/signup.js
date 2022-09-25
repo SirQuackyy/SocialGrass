@@ -1,5 +1,4 @@
-const fs = require('fs')
-const db = 
+var char = false, conf = false, num = false;
 
 function checkpass(){
     var reg = /\d/m
@@ -22,9 +21,9 @@ function checkpass(){
 }
 
 function checkconf(){
-    var pass = document.getElementById("pass").value
-    var cpass = document.getElementById("cpass").value
-    var p = document.getElementById("confirm")
+    let pass = document.getElementById("pass").value, 
+    cpass = document.getElementById("cpass").value,
+    p = document.getElementById("confirm")
     if (cpass != pass){
         conf = false
         p.innerText = "It Doesn't Match Your Password"
@@ -35,11 +34,25 @@ function checkconf(){
 }
 
 function checkval(x){
-  return document.getElementById(x).value.length>0
+  return document.getElementById(x).value.length > 0
 }
 
 function signsubmit(){
-
+  if (char && conf && num){
+    if (checkval("fname") && checkval("lname") && checkval("username") && checkval("school")){
+      console.log(`${document.getElementById("pass").value}`)
+      $.ajax({
+        type: 'POST',
+        url: `http://localhost:3000/users/${document.getElementById("username").value}&=${document.getElementById("pass").value}&=${document.getElementById("fname").value}&=${document.getElementById("lname").value}&=${document.getElementById("school").value}&=""&=${[]}`,
+        success: function(response) { 
+         console.log(response);
+        },
+        error: function(xhr, status, err) {
+          console.log(xhr.responseText);
+        }
+      });
+    }
+  }
 }
 function checkcomplete(){
     var complete = document.getElementById("school").value

@@ -48,8 +48,8 @@
     color: #323331;
     padding: 5px 10px;
     overflow:scroll;
-    scroll-behavior: auto;
     margin-top: 0px;
+    overflow-wrap: break-word;
   }
 
   
