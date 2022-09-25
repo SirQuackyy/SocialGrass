@@ -8,10 +8,38 @@
         <title>Document</title>
 </head>
 <body>
-    <div id = "contain">
-        <p id = "f">What's your favorite activity</p>
-    </div>
-    <input type="text" id = "send">
+    <ol id = "contain">
+        <li>Are you and introvert?</li> <br>
+        <label for="y">Yes</label>
+        <input name  = "intro" type="radio" id="y" class = "ans">
+        <label for="n">No</label>
+        <input name = "intro" type="radio" id="n" class = "ans"> <br>
+        
+        <li>Do you like sports?</li> <br> 
+        <label for="y">Yes</label>
+        <input name = "sports" type="radio" id="y" class = "ans">
+        <label for="n">No</label>
+        <input name = "sports" type="radio" id="n" class = "ans"> <br>
+
+        <li>Do you prefer going out over staying inside?</li> <br>
+        <label for="y">Yes</label>
+        <input name = "going" type="radio" id="y" class = "ans">
+        <label for="n">No</label>
+        <input name = "going" type="radio" id="n" class = "ans"> <br>
+
+        <li>Do you like reading?</li> <br>
+        <label for="y">Yes</label>
+        <input name = "reading" type="radio" id="y" class = "ans">
+        <label for="n">No</label>
+        <input name = "reading" type="radio" id="n" class = "ans"> <br>
+
+        <li>Do you enjoy academics?</li> <br>
+        <label for="y">Yes</label>
+        <input name = "academics" type="radio" id="y" class = "ans">
+        <label for="n">No</label>
+        <input name = "academics" type="radio" id="n" class = "ans"> <br>
+    </ol>
+
     <button onclick="send()">Submit</button>
     <script src="./interests.js"></script>
 </body>

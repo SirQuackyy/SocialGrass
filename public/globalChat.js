@@ -7,21 +7,17 @@ function myFunction(e) {
 }
 
 
-var user = cookie.get('user');
+var user = cookie.get('username');
 var socket = io();
 if (!user) {
-  user = prompt('Choose a username:');
-  if (!user) {
-    alert('We cannot work with you like that!');
-  } else {
-    cookie.set('user', user);
-  }
+    alert('You can\'t chat without an account');
 }
 socket.on('count', function (data) {
     $('.user-count').html(data);
 });
   
 socket.on('message', function (data) {
+    
     document.getElementById("chat").innerHTML += ('<strong>' + data.user + '</strong>: ' + data.message + '<br>');
     // $('#chat').innerHTML += ('<strong>' + data.user + '</strong>: ' + data.message + '<br>');
 });
@@ -32,7 +28,7 @@ $('form').submit(function (e) {
     var message = $(e.target).find('input').val();
     if (message.length > 0 && !/^\s*$/.test(message)){
     socket.emit('message', {
-      user: cookie.get('user') || 'Anonymous',
+      user: cookie.get('username') || 'Anonymous',
       message: message
     });
   

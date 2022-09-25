@@ -13,11 +13,17 @@
 </head>
 <body>
     <div id = "home" class="text-center m-auto mt-4 pb-2 w-100 fixed">
-        <h1 class="Welcome">Welcome</h1>
-        <h2 class="Username text-dark"> username :D </h2>
-        <button class="btn btn-outline-dark" onclick="">Edit Profile</button>
+        <h1 class="Welcome">WELCOME</h1>
+        <h2 id ="Username"> username :D </h2>
+
         <a href="./globalChat.html"> <button class="btn btn-outline-dark" onclick="">Enter Chatroom</button> </a>
     </div>
+    <!-- <script src="./home.js"></script> -->
+    <script defer>
+        var username = document.cookie.split("=")[1]
+        document.getElementById("Username").innerText = username
+        console.log(username)
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 </body>
 </html>

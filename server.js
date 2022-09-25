@@ -20,7 +20,7 @@ const server = require('server');
 const { get, socket, post } = server.router;
 const { render, send, status } = server.reply;
 const fs = require('fs');
-const dbPath = './public/db.json';
+var db = require('./public/db.json');
 const fetch = (...args) =>
   import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
@@ -39,22 +39,41 @@ server({ security: { csrf: false } }, [
   socket('connect', updateCounter),
   socket('disconnect', updateCounter),
   socket('message', sendMessage),
-  post('/add_user/:username/:password/:first/:last/:school/:about/:friends', ctx => {
-    status(200).send('ok');
-    fetch('http://localhost:3000/public/db.json')
-    .then((response) => response.json())
-    .then((json) => {
-      json.push({
-        "username": ctx.params.username,
-        "password": ctx.params.password,
-        "first_name": ctx.params.first,
-        "last_name": ctx.params.last,
-        "school": ctx.params.school,
-        "aboutme": ctx.params.about,
-        "friends": ctx.params.friends
-      });
-      fs.writeFile(dbPath, JSON.stringify(json), 'utf8', callback);
-    });
+  post('/add_user', ctx => {
+    db.push(ctx.data);
+    fs.writeFileSync('./public/db.json', JSON.stringify(db), 'utf8');
+    render('home.html');
+  }),
+  get('/user/:username', ctx => {
+    let found = false;
+    for(var i = 0; i < db.length; i++){
+      if(ctx.params.username == db[i].username){
+        found = true;
+        break;
+      }
+    }
+    console.log(found);
+    if(found){
+      send('exists');
+    } else {
+      send('not exists');
+    }
+  }),
+  get('/login/:username/:passsword', ctx => {
+    let found = false;
+    for(var i = 0; i < db.length; i++){
+      if(ctx.params.username == db[i].username){
+        if(ctx.params.password == db[i].password){
+          found = true;
+          break;      
+        }
+      }
+    }
+    if(found){
+      render('home.html');
+    } else {
+      send('not exists');
+    }
   })
 ]);
 

@@ -1,28 +1,33 @@
-* {
+*{
     box-sizing: border-box;
     transition: all .3s ease;
-  }
-  
+  }  
   html, body {
     background: #eee;
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0; 
-    background-color: #cdc5b8;
+    padding: 0;
+    overflow: scroll; 
+    background-color:#d0c9bb;
     position: fixed;
+
   }
   
+
    header {
     margin-top: 0px;
-    padding:0%;
-    width: 100%;
+    padding:10%;
+    background-color: #959683; 
+    border-bottom: #b49291 5px solid;
   } 
   
   main {
     margin: 50px;
     margin-top: 15px;
     font-family: Helvetica, Arial, Sans, sans-serif;
+    
+    
   }
    .chatroom{
     width: 100%;
@@ -52,13 +57,15 @@
      margin-top: 0px; 
     word-break: break-all;
     overflow-wrap: break-word;
+    border-color: black;
+    border: black 1px solid;
+    border-radius: 1%;
   }
   
   input, button {
     font: inherit;
      background: #fff;
     border: none;
-    margin-top: 10px; 
     padding: 5px 10px;
     color:#444a3f;
   }
@@ -68,9 +75,16 @@
     width: 100%;
   }
 
+    .homebutton {
+      margin: 10px;
+    }
+    .send {
+      margin: 4px;
+    }
+
    button{
-    background-color: #9b9d88;
-    width: 50%;
+    background-color: #7a826a;
+    width: 20%;
     } 
 
   button:hover {
