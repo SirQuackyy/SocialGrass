@@ -1,28 +1,17 @@
 .title{
-    text-align:center;
-    font-size: 225%;
-    color:  #00b38f;
-    text-decoration: underline;
-}
-.join{
-    text-align: center;
+    font-size: 500%;
+    color:  #323331;
+    
 }
 .blue{
-padding: 20%;
-padding-left: 45%;
-padding-right:35;
-padding-bottom:50%;
-background-image: linear-gradient(#4ca1af, #c4e0e5);
-position: fixed;
+  padding: 20%;
+  padding-left: 35%;
+  padding-right:35%;
+  padding-bottom:60%;
+  background-image: linear-gradient(#4ca1af, #c4e0e5);
+  position: fixed;
 }
-.tagline{
-    text-align: center;
-    font-size: 150%;
-    color: #66ffcc;
-    text-decoration:line-through;
-  }
-  .realtagline{
-    text-align: center;
-    font-size: 150%;
-    color:  #66ffcc;
-  }
+.tags{
+    font-size: 125%; 
+    color: #444a3f;
+}
