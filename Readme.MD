@@ -19,5 +19,5 @@ We were efficiently able to divide up the work allowing each of us to work in ou
 ### What we learned
 We learned how to work as a team and be efficient as well as to be realistic with our goals.
 
-### What's next?
+### What's next for Frinder?
 We will implement a personal DM system so you can stay in contact with friends you meet on the global chat. Additionally, we will add a matching function that will match you with others with similar interests.
