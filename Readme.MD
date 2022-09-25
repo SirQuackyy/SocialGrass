@@ -3,6 +3,10 @@
 
 <div id = "text" align= 'center'> Never be lonely again! We'll bring the friends to you.</div>
 
+<div id="froggif" align="center">
+  <img src="https://media.giphy.com/media/0mBemhQqkEH3MDN4LT/giphy.gif" width="100"/>
+</div>
+
 ### What does it do?
 Frinder allows high schoolers to create an account and enter a global chatroom with other high schoolers around the country. You can create a profile with an about me and a list of interests to meet other high schoolers with similar interests, allowing you to make friends more easily.
 
