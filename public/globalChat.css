@@ -8,56 +8,57 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0; 
     background-color: #cdc5b8;
+    position: fixed;
   }
   
-  header {
-    margin-top: 10px;
+   header {
+    margin-top: 0px;
     padding:0%;
     width: 100%;
-  }
-
+  } 
+  
   main {
-    margin: 25px;
+    margin: 50px;
+    margin-top: 15px;
     font-family: Helvetica, Arial, Sans, sans-serif;
   }
-  .chatroom{
-    width: calc(100% - 40px);
-    max-width: 80%;
-    margin: 100%;
+   .chatroom{
+    width: 100%;
+  } 
 
-  }
   h1, .user-count {
     margin: 0;
     padding:5px;
     font-size: 32px;
   }
-  h1{
+   h1{
     width:100%;
-  }
+  } 
+
   .user-count {
     float: right;  
   }
   
   #chat {
     content: '';
-    width: 100%;
+    width: 100%; 
     height: calc(100vh - 165px);
-    background: white;
+    background: white; 
     color: #323331;
     padding: 5px 10px;
     overflow:scroll;
-    margin-top: 0px;
-    /*overflow-wrap: break-word;*/
+     margin-top: 0px; 
+    word-break: break-all;
+    overflow-wrap: break-word;
   }
-
   
   input, button {
     font: inherit;
-    background: #fff;
+     background: #fff;
     border: none;
-    margin-top: 10px;
+    margin-top: 10px; 
     padding: 5px 10px;
     color:#444a3f;
   }
@@ -67,25 +68,25 @@
     width: 100%;
   }
 
-  button{
+   button{
     background-color: #9b9d88;
     width: 50%;
-    }
+    } 
 
   button:hover {
     cursor: pointer;
-    background: #ddd;
+    background: #ddd; 
   }
-  
+
   @media all and (min-width: 500px) {
-    .chat {
+    #chat {
       height: calc(100vh - 140px);
     }
     input {
-      width: calc(100% - 160px);
+      width: calc(100% - 115px);
     }
     button {
       float: right;
-      width: 150px;
+      width: 100px;
     }
   }
