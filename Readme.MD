@@ -1,5 +1,5 @@
 ![image](https://user-images.githubusercontent.com/114305432/192148456-80e413df-bc02-4c3a-aeec-ef9f587fa9f7.png)
-### <div id ="header" align='center'> Welcome to Frinder!</div>
+# <div id ="header" align='center'> Welcome to Frinder!</div>
 
 > Never be lonely again! We'll bring the friends to you.
 
