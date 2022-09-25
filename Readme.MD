@@ -27,3 +27,7 @@ We learned how to work as a team and be efficient as well as to be realistic wit
 
 ### What's next for Frinder?
 We will implement a personal DM system so you can stay in contact with friends you meet on the global chat. Additionally, we will add a matching function that will match you with others with similar interests.
+
+<div id="pretgif" align="center">
+  <img src="https://i.pinimg.com/originals/0b/f0/e8/0bf0e888fbb929f45b48d2546840e803.gif" width="100"/>
+</div>
